@@ -6,6 +6,7 @@
 package yangqi.jcp;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 
 /**
@@ -13,7 +14,9 @@ import java.util.HashSet;
  */
 public class TemplateHolder {
 
-    private Collection<String> templates = new HashSet<String>();
+    private Collection<String> templates = Collections.synchronizedSet(new HashSet<String>());
+
+    // private Collection<String> templates = new ConcurrentHashMap<String, String>().keySet();
 
     public TemplateHolder() {
         for (int i = 0; i < 10; i++) {

@@ -26,9 +26,12 @@ public class IteratorModify {
         int i = 0;
         while (i <= 100000) {
             Collection<String> templates = holder.getTemplates();
+            // solved this problem
+            // synchronized (templates) {
             for (String name : templates) {
                 System.out.println("show " + name);
             }
+            // }
             i++;
         }
     }
