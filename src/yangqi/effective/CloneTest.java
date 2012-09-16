@@ -21,6 +21,5 @@ public class CloneTest {
         map.put("yangqi", 19);
         map.put("o2", 20);
         
-        Map<String,Integer> cloneMap=map.c
     }
 }
