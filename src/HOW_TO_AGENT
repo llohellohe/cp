@@ -1,0 +1,2 @@
+ jar -cvfm   agent.jar META-INF/MANIFEST.MF *
+then run with java -javaagent xxx
