@@ -6,7 +6,9 @@ import java.util.WeakHashMap;
 public class WeakHashMapRunner {
 
 	/**
-	 * run as -Xms30m -Xmx30m
+	 * run as -Xms30m -Xmx30m -XX:+PrintGCDetails
+	 * -XX:NewSize=30m -XX:MaxNewSize=30m -XX:NewRatio=3 -XX:NewSize=5m -XX:+UseSerialGC  -XX:+PrintGCDetails  -XX:+PrintGCTimeStamps -XX:+PrintGCApplicationConcurrentTime -XX:+PrintGCApplicationStoppedTime -XX:PermSize=5m -XX:MaxPermSize=5m
+	 * -verbose:class
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -18,20 +20,11 @@ public class WeakHashMapRunner {
 		for (;i<10;i++) {
 			map.put(i, new String("more memory!")+i);
 		}
-		for (;i<300000;i++) {
+		for (;;i++) {
 			map.put(i, new String("more memory!")+i);
+			if(i%10000==0)
 			System.out.println(i+":"+map.size());
 		}
-		for (i=0;;i++) {
-			//if(map.get(i)==null){
-				System.out.println(i+":"+map.size()+map.get(i));
-				//break;
-			
-		}
-		//	System.out.println("=====");
-//		for (i=0;i<10;i++) {
-//			System.out.println(i+":"+map.size()+map.get(i));
-//		}
 	}
 
 }

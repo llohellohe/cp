@@ -64,7 +64,7 @@ public class RunClassByByte extends ClassLoader {
         People people = new People();
         Class clazz = people.getClass();
 
-        InputStream is = clazz.getClassLoader().getResourceAsStream(clazz.getName().replace(".", "/") + ".class");
+        InputStream is = ClassLoader.getSystemResourceAsStream(clazz.getName().replace(".", "/") + ".class");
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 

@@ -40,7 +40,7 @@ public class ServerSocketChannelRunner {
 		ServerSocketChannel serverChannel=ServerSocketChannel.open();
 		
 		
-		serverChannel.socket().bind(new InetSocketAddress(port));	
+		serverChannel.socket().bind(new InetSocketAddress("127.0.0.1",port));	
 		
 		serverChannel.configureBlocking(false);
 		
