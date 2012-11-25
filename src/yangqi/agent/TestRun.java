@@ -1,5 +1,7 @@
 package yangqi.agent;
 
+import java.util.HashMap;
+
 public class TestRun {
 
 	/**
@@ -35,6 +37,14 @@ public class TestRun {
 			s+="a";
 		System.out.println("deep string :,length to "+i+" "+SizeOf.deepSizeOf(s));
 		}
+		System.out.println("deep string :,length to  "+SizeOf.deepSizeOf(new Object()));
+		System.out.println("======---========----========");
+		Integer i=Integer.valueOf(19);
+		System.out.println("Integer object "+SizeOf.deepSizeOf(i));
+		System.out.println("int "+SizeOf.sizeOf(19));
+		System.out.println("Hash Map object Deep "+SizeOf.deepSizeOf(new HashMap()));
+		System.out.println("Hash Map object "+SizeOf.sizeOf(new HashMap()));
+		
 	}
 
 }

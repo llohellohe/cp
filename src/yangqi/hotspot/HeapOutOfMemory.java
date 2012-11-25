@@ -9,9 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 类HeapOutOfMemory.java的实现描述：TODO 类实现描述
- * 
- * @author yangqi 2012-7-23 下午10:15:32
+ * 绫�eapOutOfMemory.java����版�杩帮�TODO 绫诲��版�杩� * 
+ * @author yangqi 2012-7-23 涓��10:15:32
  */
 public class HeapOutOfMemory {
 
@@ -21,8 +20,12 @@ public class HeapOutOfMemory {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         List<String> list = new ArrayList<String>();
+        int count=0;
         while (true)
+        {
+        	System.out.println(count++);
             list.add(new String("Consume more memory!"));
+        }
     }
 
 }

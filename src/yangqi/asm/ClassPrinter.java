@@ -21,24 +21,33 @@ public class ClassPrinter extends ClassVisitor {
      */
     public static void main(String[] args) throws IOException {
 
-        ClassPrinter printer = new ClassPrinter();
-        ClassReader cr = new ClassReader("yangqi.hotspot.classlifecycle.People");
+        
+    	printClass("yangqi.asm.ConPeople");
+    	printClass("yangqi.asm.ConPeople2");
+    	
+    	printClass("yangqi.asm.PeopleWithSignature");
+    }
+    
+    private static void printClass(String name) throws IOException{
+    	ClassPrinter printer = new ClassPrinter();
+        ClassReader cr = new ClassReader(name);
 
-        System.out.println(cr.getClassName());
+      //  System.out.println(cr.getClassName());
 
         cr.accept(printer, 0);
-
+        
+        System.out.println("=====");
     }
 
     public MethodVisitor visitMethod(int access, String name, String desc, String signature, String[] exceptions) {
 
         System.out.println("METHOD VISIT [ access:" + access + ",name:" + name + ",desc:" + desc + ",signature:"
                            + signature);
-        return null;
+        return new MethodPrinter(Opcodes.ASM4);
     }
 
     public void visit(int version, int access, String name, String signature, String superName, String[] interfaces) {
-        System.out.println("version:" + version + ",name" + name + " extends " + superName + " {");
+        System.out.println("version:" + version + ",name" + name +",signature:"+signature+ " ,extends " + superName + " {");
     }
 
     public void visitSource(String source, String debug) {
