@@ -21,7 +21,7 @@ public class DeSerializableTest {
 
         FileInputStream fis = new FileInputStream("/tmp/abc");
         ObjectInputStream ois = new ObjectInputStream(fis);
-        Person2 p = (Person2) ois.readObject();
+        Person p = (Person) ois.readObject();
         System.out.println(p.getName());
 
     }
