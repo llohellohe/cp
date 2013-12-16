@@ -8,7 +8,7 @@ package yangqi.jcp.latch;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author yangqi 2012-2-25 обнГ05:20:05
+ * @author yangqi 2012-2-25 05:20:05
  */
 public class Worker extends Thread {
 

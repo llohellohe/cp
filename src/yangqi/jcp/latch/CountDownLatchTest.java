@@ -6,11 +6,13 @@
 package yangqi.jcp.latch;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
- * @author yangqi 2012-2-25 ÏÂÎç05:23:34
+ * @author yangqi 2012-2-25 05:23:34
  */
-public class TestLatch {
+public class CountDownLatchTest {
 
     /**
      * @param args
@@ -19,9 +21,11 @@ public class TestLatch {
         int size = 3;
         CountDownLatch latch = new CountDownLatch(size);
 
-        new Worker("worker1", 11000, latch).start();
-        new Worker("worker2", 20000, latch).start();
-        new Worker("worker3", 10400, latch).start();
+
+        ExecutorService executor = Executors.newCachedThreadPool();
+        for (int i = 0; i < size; i++) {
+            executor.execute(new Worker("worker" + i, 1040, latch));
+        }
 
         try {
             latch.await();
@@ -29,7 +33,7 @@ public class TestLatch {
             e.printStackTrace();
         }
 
-        System.err.println("ALL WORK FINISHED");
+        System.out.println("ALL WORK FINISHED");
 
     }
 
