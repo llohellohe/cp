@@ -24,6 +24,12 @@ public class InetAddressRunner {
 			showAddress(address4);
 			
 			
+            InetAddress resolvedAddresses[] = InetAddress.getAllByName("www.baidu.com");
+
+            for (InetAddress add : resolvedAddresses) {
+                System.out.println("Baidu:" + add.getHostAddress());
+            }
+
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		}
