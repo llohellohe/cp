@@ -1,4 +1,4 @@
-package yangqi.jcp.threadlocal;
+package yangqi.jcp.lock;
 
 import java.util.concurrent.TimeUnit;
 
