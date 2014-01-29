@@ -15,9 +15,11 @@ public class WaitAndNotify {
      * @param args
      */
     public static void main(String[] args) {
-        System.out.println("abc");
+        System.out.println("start");
         Thread reader = new Thread(new Reader(empty));
         reader.start();
+        System.out.println("hello");
+
 
         Thread writer = new Thread(new Writer(empty));
         writer.start();
