@@ -8,16 +8,19 @@ package yangqi.jcp.blockingqueue;
 import java.util.concurrent.BlockingQueue;
 
 /**
- * @author yangqi 2012-2-22 ÏÂÎç09:03:31
+ * @author yangqi 2012-2-22 ï¿½ï¿½ï¿½ï¿½09:03:31
  */
 public class Worker implements Runnable {
 
     private final BlockingQueue<String> workQueue;
-    private int                         workerId;
+    private int workerId;
 
     public Worker(BlockingQueue workQueue, int workerId) {
         this.workQueue = workQueue;
         this.workerId = workerId;
+        int i = 0;
+        int j = 10;
+        int x = 20;
     }
 
     @Override
@@ -25,6 +28,7 @@ public class Worker implements Runnable {
         while (true) {
             String workString = workQueue.poll();
             if (workString != null) {
+
                 System.out.println("worker with[" + workerId + "]process with " + workString);
 
             }

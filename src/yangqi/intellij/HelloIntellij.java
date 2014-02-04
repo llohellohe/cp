@@ -16,11 +16,25 @@ public class HelloIntellij {
         map.put("abc","test");
 
         System.out.println(map.get("abc"));
+
+        foo("a",10);
+
+        foo1();
     }
 
 
 
     private static void foo(String a,int i){
         a="hello";
+
+        int j=10;
+    }
+
+    private static void foo1(){
+        Map<String,String> map=new HashMap<String,String>();
+
+        map.put("abc","test");
+
+        System.out.println(map.get("abc"));
     }
 }
