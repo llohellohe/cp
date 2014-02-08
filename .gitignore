@@ -1,0 +1,5 @@
+bin/*
+bin/*.class
+src/yangqi/package-info.java
+*.idea
+*.iml
